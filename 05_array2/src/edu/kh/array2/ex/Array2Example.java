@@ -117,7 +117,7 @@ public class Array2Example {
 		arr[3] = new char[2];
 		
 		char ch = 'a';
-		
+	
 		for(int row = 0; row < arr.length; row++) { // 0,1,2,3
 			for(int col = 0; col < arr[row].length;col++) {
 				arr[row][col] = ch++;
