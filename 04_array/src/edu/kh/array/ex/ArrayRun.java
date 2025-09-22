@@ -14,9 +14,9 @@ public class ArrayRun {
 		//arrayEx1.ex8(); 
 		
 		ArrayExample2 arrayEx2 = new ArrayExample2();
-		//arrayEx2.shallowCopy();
+		arrayEx2.shallowCopy();
 		//arrayEx2.deepCopy();
-		arrayEx2.createLottoNumber();
+		//arrayEx2.createLottoNumber();
 
 	}
 
