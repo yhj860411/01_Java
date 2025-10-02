@@ -64,6 +64,7 @@ public class BookService {
 			String author = sc.nextLine();
 			System.out.print("도서 가격 : ");
 			int price = sc.nextInt();
+			sc.nextLine();
 			System.out.print("도서 출판사 : ");
 			String publisher = sc.nextLine();
 			
@@ -119,25 +120,25 @@ public class BookService {
 			switch(input) {
 			case 1: 
 				System.out.println("========도서명 수정=========");
-				System.out.print("수정할 도서명을 입력하세요:"); 
+				System.out.print("수정할 도서명을 입력하세요 : "); 
 				upbook.setTitle(sc.nextLine());
 				System.out.println("수정 완료");
 				break;
 			case 2: 
 				System.out.println("========도서 저자 수정=========");
-				System.out.print("수정할 저자명을 입력하세요:"); 
+				System.out.print("수정할 저자명을 입력하세요 : "); 
 				upbook.setAuthor(sc.nextLine());
 				System.out.println("수정 완료");
 				break;
 			case 3: 
 				System.out.println("========도서 가격 수정=========");
-				System.out.print("수정할 가격을 입력하세요:"); 
+				System.out.print("수정할 가격을 입력하세요 : "); 
 				upbook.setPrice(sc.nextInt());
 				System.out.println("수정 완료");
 				break;
 			case 4: 
 				System.out.println("========도서 출판사 수정=========");
-				System.out.print("수정할 출판사명을 입력하세요:"); 
+				System.out.print("수정할 출판사명을 입력하세요 : "); 
 				upbook.setPublisher(sc.nextLine());
 				System.out.println("수정 완료");
 				break;
