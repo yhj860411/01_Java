@@ -1,5 +1,7 @@
 package poppyPlaytime.model.dto;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -71,11 +73,19 @@ public class Toy {
 		this.toyMaterial = toyMaterial;
 	}
 
-	@Override
-	public String toString() {
+	public void information() {// 장난감들의 정보 출력포맷 설정
 		
-		return "이름 : " + name + " / 가격 : " + price + " / 색상 : " + color + " / 사용가능연령 : " + 
-				age + " / 제조년월일 : " + date + " / 재료 : " + toyMaterial;
+		System.out.print("이름 : " + name + " / 가격 : " + price + " / 색상 : " + color + " / 사용가능연령 : " + 
+				age + " / 제조년월일 : " + date + " / 재료 : ");
+		
+		List<String> list = new ArrayList<>(toyMaterial);// 재료Set의 출력포맷을 구현하기 위해 List로 변환
+		for(int i = 0; i < list.size(); i++) {
+			if(i != 0) {
+				System.out.print(", ");
+			}
+			System.out.print(list.get(i));
+		}
+		System.out.println();
 	}
 
 }

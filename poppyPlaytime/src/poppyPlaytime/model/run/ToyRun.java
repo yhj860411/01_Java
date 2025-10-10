@@ -1,9 +1,12 @@
 package poppyPlaytime.model.run;
 
+import poppyPlaytime.model.service.ToyFactory;
+
 public class ToyRun {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		ToyFactory toyfactory = new ToyFactory();
+		toyfactory.displayMenu();
 
 	}
 
