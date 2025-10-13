@@ -2,7 +2,7 @@ package poppyPlaytime.model.dto;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 
 public class Toy {
@@ -72,15 +72,38 @@ public class Toy {
 	public void setMaterial(Set<String> toyMaterial) {
 		this.toyMaterial = toyMaterial;
 	}
+	
 
-	public void information() {// 장난감들의 정보 출력포맷 설정
+	@Override
+	public int hashCode() {
+		return Objects.hash(age, color, date, name, price, toyMaterial);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Toy other = (Toy) obj;
+		return age == other.age && Objects.equals(color, other.color) && Objects.equals(date, other.date)
+				&& Objects.equals(name, other.name) && price == other.price
+				&& Objects.equals(toyMaterial, other.toyMaterial);
+	}
+
+	/**
+	 * 장난감들의 정보 출력포맷 설정
+	 */
+	public void information() {
 		
 		System.out.print("이름 : " + name + " / 가격 : " + price + " / 색상 : " + color + " / 사용가능연령 : " + 
 				age + " / 제조년월일 : " + date + " / 재료 : ");
 		
 		List<String> list = new ArrayList<>(toyMaterial);// 재료Set의 출력포맷을 구현하기 위해 List로 변환
 		for(int i = 0; i < list.size(); i++) {
-			if(i != 0) {
+			if(i != 0) {// 인덱스가 1 이상이 되면 앞에 ","를 추가
 				System.out.print(", ");
 			}
 			System.out.print(list.get(i));
