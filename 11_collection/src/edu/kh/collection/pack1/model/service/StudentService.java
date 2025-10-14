@@ -386,18 +386,13 @@ public class StudentService {
 	 * 8. 이름으로 정렬 (가나다순)
 	 */
 	private void sortByName() {
-		Collections.sort(studentList, new Comparator<Student>() {
+		Collections.sort(studentList, new Comparator<Student>(){
 
 			@Override
 			public int compare(Student o1, Student o2) {
-				// 이름 비교
-				// name은 String형이라 compareTo()로 비교
-				// String.compareTo() : 자바에서 객체를 비교하는 메소드.
-				// (String이 Comparable을 상속받아 재정의해둔
-				// compareTo() 메서드를 이용하는 것
-				// -> 두 객체를 비교하고 문자열의 순서 결정함.
 				return o1.getName().compareTo(o2.getName());
 			}
+			
 		});
 		
 		for(Student std : studentList) {
